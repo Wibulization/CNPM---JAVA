@@ -134,9 +134,9 @@ public class DangNhap extends javax.swing.JFrame {
         );
 
         icon_logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        icon_logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pero\\Documents\\NetBeansProjects\\QuanLyCuaHang\\image\\logo.png")); // NOI18N
+        icon_logo.setIcon(new javax.swing.ImageIcon(".\\image\\logo.png")); // NOI18N
 
-        btnExit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pero\\Documents\\NetBeansProjects\\QuanLyCuaHang\\image\\close.png")); // NOI18N
+        btnExit.setIcon(new javax.swing.ImageIcon(".\\image\\close.png")); // NOI18N
         btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -213,7 +213,7 @@ public class DangNhap extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        lbl_background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pero\\Documents\\NetBeansProjects\\QuanLyCuaHang\\image\\background.png")); // NOI18N
+        lbl_background.setIcon(new javax.swing.ImageIcon(".\\image\\background.png")); // NOI18N
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
