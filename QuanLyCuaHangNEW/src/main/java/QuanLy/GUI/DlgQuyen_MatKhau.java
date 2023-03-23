@@ -234,7 +234,9 @@ public class DlgQuyen_MatKhau extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCapMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapMatKhauActionPerformed
-        taiKhoanBUS.datLaiMatKhau(maNV, txtMatKhau_TenDangNhap.getText());
+        //taiKhoanBUS.datLaiMatKhau(maNV, txtMatKhau_TenDangNhap.getText());
+        DlgDoiMatKhau dialog = new DlgDoiMatKhau();
+        dialog.setVisible(true);
     }//GEN-LAST:event_btnCapMatKhauActionPerformed
 
     private void btnLuuQuyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuQuyenActionPerformed

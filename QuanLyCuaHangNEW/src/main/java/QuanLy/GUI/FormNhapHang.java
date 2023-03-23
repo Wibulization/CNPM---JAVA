@@ -321,13 +321,15 @@ public class FormNhapHang extends javax.swing.JPanel {
             tblKho.getColumnModel().getColumn(1).setMaxWidth(400);
             tblKho.getColumnModel().getColumn(2).setMaxWidth(125);
         }
+        tblKho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblKhoMouseClicked(evt);
+            }
+        });
 
         tblGioNhap.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                
             },
             new String [] {
                 "Mã SP", "Tên sản phẩm", "SL", "Đơn giá", "Thành tiền"
@@ -858,6 +860,11 @@ public class FormNhapHang extends javax.swing.JPanel {
             }
             String tenSP = tblKho.getValueAt(row, 1) + "";
             int thanhTien = soLuong * donGia;
+            if(soLuong > 0 && donGia >0)
+            {
+            dtmGioNhap = (DefaultTableModel) tblGioNhap.getModel();
+            //dtmGioNhap.setNumRows(0);
+
             Vector vec = new Vector();
             vec.add(maSP);
             vec.add(tenSP);
@@ -865,6 +872,9 @@ public class FormNhapHang extends javax.swing.JPanel {
             vec.add(donGia);
             vec.add(thanhTien);
             dtmGioNhap.addRow(vec);
+            dtmGioNhap.fireTableDataChanged();
+            tblGioNhap.setModel(dtmGioNhap);
+            }
         } else {
             new MyDialog("Chưa chọn sản phẩm để nhập!", MyDialog.ERROR_DIALOG);
         }
@@ -938,6 +948,15 @@ public class FormNhapHang extends javax.swing.JPanel {
                 dtmKho.addRow(vec);
         }
         tblKho.setModel(dtmKho);
+    }
+
+    private void xuLyClicktblKho() {
+        int row = tblKho.getSelectedRow();
+        if (row > -1) {
+            txt_masanpham.setText(tblKho.getValueAt(row, 0) + "");
+            txt_tensanpham.setText(tblKho.getValueAt(row, 1) + "");
+            //txtSoLuong.setText(tblKho.getValueAt(row, 2) + "");
+        }
     }
      
     private void loadDataTableKho(String tuKhoa) {
@@ -1034,9 +1053,10 @@ public class FormNhapHang extends javax.swing.JPanel {
     
 
     private void tblKhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhoMouseClicked
-        txtDonGia.setText("1");
         txtSoLuong.setText("1");
+        txtDonGia.setText("0");
         tblGioNhap.clearSelection();
+        xuLyClicktblKho();
     }//GEN-LAST:event_tblKhoMouseClicked
 
     private void tblGioNhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblGioNhapMouseClicked
