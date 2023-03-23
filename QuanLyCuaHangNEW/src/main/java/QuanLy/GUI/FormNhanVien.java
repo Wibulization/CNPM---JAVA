@@ -277,7 +277,11 @@ public class FormNhanVien extends javax.swing.JPanel {
 
         btnTimNV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnTimNV.setIcon(new javax.swing.ImageIcon(".\\image\\search.png")); // NOI18N
-
+        btnTimNV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTimKiemMouseClicked(evt);
+            }
+        });
         javax.swing.GroupLayout pnTimNVLayout = new javax.swing.GroupLayout(pnTimNV);
         pnTimNV.setLayout(pnTimNVLayout);
         pnTimNVLayout.setHorizontalGroup(
@@ -831,6 +835,16 @@ public class FormNhanVien extends javax.swing.JPanel {
             vec.add(nv.getTen());
             vec.add(nv.getGioiTinh());
             vec.add(nv.getChucVu());
+            int trangThai = taiKhoanBUS.getTrangThai(nv.getMaNV() + "");
+            if (trangThai == 0) {
+                vec.add("Khoá");
+            }
+            else if(trangThai == 1) {
+                vec.add("Hiệu lực");
+            }
+            else {
+                vec.add("Chưa có");
+            }
             dtmNhanVien.addRow(vec);
         }
     }
@@ -1048,6 +1062,9 @@ public class FormNhanVien extends javax.swing.JPanel {
         xuLyResetMatKhau();
     }//GEN-LAST:event_btnResetQuyenMatKhauMouseClicked
 
+    private void btnTimKiemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetQuyenMatKhauMouseClicked
+        xuLyTimKiemNhanVien();
+    }
     private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
         xulyReset();
     }//GEN-LAST:event_btnResetMouseClicked
