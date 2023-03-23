@@ -121,9 +121,9 @@ public class FormNhanVien extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Mã nhân viên:");
 
-        txtMaNV.setEditable(true);
+        txtMaNV.setEditable(false);
         txtMaNV.setFont(new java.awt.Font("Roboto", 0, 15)); // NOI18N
-        txtMaNV.setEnabled(true);
+        txtMaNV.setEnabled(false);
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
