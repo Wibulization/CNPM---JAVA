@@ -17,6 +17,10 @@ public class KhachHangBUS {
     private ArrayList<KhachHang> listKhachHang = null;
     private KhachHangDAO khachHangDAO = new KhachHangDAO();
 
+    public KhachHangBUS()
+    {
+        this.listKhachHang = khachHangDAO.getListKhachHang();
+    }
     public void docDanhSach() {
         this.listKhachHang = khachHangDAO.getListKhachHang();
     }

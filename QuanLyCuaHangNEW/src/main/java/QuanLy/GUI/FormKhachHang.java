@@ -244,7 +244,11 @@ public class FormKhachHang extends javax.swing.JPanel {
 
         btnTim.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnTim.setIcon(new javax.swing.ImageIcon(".\\image\\search.png")); // NOI18N
-
+        btnTim.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTimMouseClicked(evt);
+            }
+        });
         javax.swing.GroupLayout pnTimLayout = new javax.swing.GroupLayout(pnTim);
         pnTim.setLayout(pnTimLayout);
         pnTimLayout.setHorizontalGroup(
@@ -535,6 +539,13 @@ public class FormKhachHang extends javax.swing.JPanel {
     
     private void xuLyLiveSearch() {
         ArrayList<KhachHang> dskh = khachHangBUS.timKiemKhachHang(txtTukhoa.getText());
+        if(dskh != null)
+        loadDataLenTableKhachHang(dskh);
+    }
+
+    private void xuLyMinMaxSearch() {
+        ArrayList<KhachHang> dskh = khachHangBUS.timKiemKhachHang(txtMinchiTieu.getText(),txtMaxChiTieu.getText());
+        if(dskh != null)
         loadDataLenTableKhachHang(dskh);
     }
     
@@ -558,7 +569,10 @@ public class FormKhachHang extends javax.swing.JPanel {
     private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
         xulyReSet();
     }//GEN-LAST:event_btnResetMouseClicked
-
+    private void btnTimMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTimMouseClicked
+        xuLyLiveSearch();
+        xuLyMinMaxSearch();
+    }
     private KhachHangBUS khachHangBUS = new KhachHangBUS();
     DefaultTableModel dtmKhachHang;
 
