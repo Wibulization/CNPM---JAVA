@@ -898,10 +898,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }
 
-    public static void main(String[] args) {
-        String currentDirectory = System.getProperty("user.dir");
-     System.out.println("user.dir: " + currentDirectory);
-    }
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

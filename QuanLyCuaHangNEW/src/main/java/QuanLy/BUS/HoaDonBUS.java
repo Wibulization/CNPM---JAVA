@@ -18,6 +18,12 @@ public class HoaDonBUS {
     private ArrayList<HoaDon> listHoaDon;
     private HoaDonDAO hoaDonDAO = new HoaDonDAO();
 
+    public HoaDonBUS()
+    {
+        if (listHoaDon == null)
+        listHoaDon = getListHoaDon();
+    }
+
     public ArrayList<HoaDon> getListHoaDon() {
         listHoaDon = hoaDonDAO.getListHoaDon();
         return listHoaDon;
@@ -69,6 +75,11 @@ public class HoaDonBUS {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date minDate = sdf.parse(min);
             Date maxDate = sdf.parse(max);
+
+            if (maxDate.before(minDate)) {
+                new MyDialog("Hãy nhập khoảng ngày phù hợp!", MyDialog.ERROR_DIALOG);
+                return null;
+            }
 
             java.sql.Date dateMin = new java.sql.Date(minDate.getTime());
             java.sql.Date dateMax = new java.sql.Date(maxDate.getTime());

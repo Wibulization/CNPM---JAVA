@@ -543,7 +543,11 @@ public class FormNhapHang extends javax.swing.JPanel {
 
         btnTimTheoNgay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnTimTheoNgay.setIcon(new javax.swing.ImageIcon(".\\image\\search.png")); // NOI18N
-
+        btnTimTheoNgay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTimTheoNgayMouseClicked(evt);
+            }
+        });
         javax.swing.GroupLayout pnTimTheoNgayLayout = new javax.swing.GroupLayout(pnTimTheoNgay);
         pnTimTheoNgay.setLayout(pnTimTheoNgayLayout);
         pnTimTheoNgayLayout.setHorizontalGroup(
@@ -952,10 +956,20 @@ public class FormNhapHang extends javax.swing.JPanel {
 
     private void xuLyClicktblKho() {
         int row = tblKho.getSelectedRow();
-        if (row > -1) {
+        if (row > -1 ) {
             txt_masanpham.setText(tblKho.getValueAt(row, 0) + "");
-            txt_tensanpham.setText(tblKho.getValueAt(row, 1) + "");
-            //txtSoLuong.setText(tblKho.getValueAt(row, 2) + "");
+            txt_tensanpham.setText(tblKho.getValueAt(row, 1) + "");    
+        }
+        SanPhamBUS sanPhamBUS = new SanPhamBUS();
+        ArrayList<SanPham> dssp = sanPhamBUS.getListSanPham();
+        for (SanPham sp : dssp)
+        {
+            if (txt_masanpham.getText().equals(sp.getMaSP()+""))
+            {
+                txtDonGia.setText(sp.getDonGia()+"");
+                break;
+            }
+            else txtDonGia.setText("0");
         }
     }
      
@@ -1054,7 +1068,6 @@ public class FormNhapHang extends javax.swing.JPanel {
 
     private void tblKhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhoMouseClicked
         txtSoLuong.setText("1");
-        txtDonGia.setText("0");
         tblGioNhap.clearSelection();
         xuLyClicktblKho();
     }//GEN-LAST:event_tblKhoMouseClicked
@@ -1106,6 +1119,13 @@ public class FormNhapHang extends javax.swing.JPanel {
         phieuNhapBUS.docDanhSach();
         ArrayList<PhieuNhap> dspn = phieuNhapBUS.getListPhieuNhapTheoNgay(tuNgay, denNgay);
         duaDataVaoTablePhieuNhap(dspn);
+    }
+    private void btnTimTheoNgayMouseClicked(java.awt.event.MouseEvent evt)
+    {
+        String tuNgay = sdf.format(dateTuNgay.getDate());
+        String denNgay = sdf.format(dateDenNgay.getDate());
+        loadDataTablePhieuNhapTheoNgay(tuNgay,denNgay);
+        
     }
     
     private DefaultTableModel dtmKho, dtmGioNhap, dtmPhieuNhap, dtmCTPhieuNhap;

@@ -144,6 +144,11 @@ public class FormHoaDon extends javax.swing.JPanel {
         btnTim.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         btnTim.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnTim.setText("Tìm kiếm");
+        btnTim.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTimTheoNgayMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnTimKiemLayout = new javax.swing.GroupLayout(pnTimKiem);
         pnTimKiem.setLayout(pnTimKiemLayout);
@@ -482,6 +487,23 @@ public class FormHoaDon extends javax.swing.JPanel {
         }
         tblHoaDon.setModel(dtmHoaDon);
     }
+    private void loadDataListHoaDon(ArrayList<HoaDon> dshd)
+    {
+        dtmHoaDon = (DefaultTableModel) tblHoaDon.getModel();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        DecimalFormat dcf = new DecimalFormat("###,###");
+        dtmHoaDon.setNumRows(0);
+        for (HoaDon index : dshd) {
+            Vector<Object> vec = new Vector<>();
+            vec.add((Object) index.getMaHD());
+            vec.add((Object) index.getMaKH());
+            vec.add((Object) index.getMaNV());
+            vec.add(sdf.format((Object) index.getNgayLap()));
+            vec.add(dcf.format((Object) index.getTongTien()));
+            dtmHoaDon.addRow(vec);
+        }
+        tblHoaDon.setModel(dtmHoaDon);
+    }
     
     private void xuLyHienCTHoaDon() {
         ArrayList<HoaDon> dshd = hoaDonBUS.getListHoaDon();
@@ -554,6 +576,19 @@ public class FormHoaDon extends javax.swing.JPanel {
             txtThanhTienCT.setText(thanhTien);
         }
     }
+    private void loadDataTablePhieuNhapTheoNgay(String tuNgay, String denNgay) {
+        HoaDonBUS HoaDonBUS = new HoaDonBUS();
+        ArrayList<HoaDon> dspn = HoaDonBUS.getListHoaDonTheoNgay(tuNgay, denNgay);
+        loadDataListHoaDon(dspn);
+    }
+    private void btnTimTheoNgayMouseClicked(java.awt.event.MouseEvent evt)
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String tuNgay = sdf.format(dateMinNgayLap.getDate());
+        String denNgay = sdf.format(date_ngayketthuc.getDate());
+        loadDataTablePhieuNhapTheoNgay(tuNgay,denNgay);
+       
+    }
     
     private void txtMaKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaKHActionPerformed
         // TODO add your handling code here:
@@ -576,6 +611,7 @@ public class FormHoaDon extends javax.swing.JPanel {
     private CTHoaDonBUS ctHDBUS = new CTHoaDonBUS();
     DefaultTableModel dtmHoaDon, dtmCTHoaDon;
     DecimalFormat dcf = new DecimalFormat("###,###");
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnTim;
