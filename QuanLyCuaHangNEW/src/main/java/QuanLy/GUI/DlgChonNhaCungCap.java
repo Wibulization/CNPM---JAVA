@@ -50,7 +50,7 @@ public class DlgChonNhaCungCap extends javax.swing.JDialog {
 
         if (dsncc != null) {
             for (NhaCungCap ncc : dsncc) {
-                Vector vec = new Vector();
+                Vector<Object> vec = new Vector<>();
                 vec.add(ncc.getMaNCC());
                 vec.add(ncc.getTenNCC());
                 vec.add(ncc.getDiaChi());

@@ -858,7 +858,7 @@ public class FormSanPham extends javax.swing.JPanel {
             dssp = spBUS.getSanPhamTheoTen(ten);
             DecimalFormat dcf = new DecimalFormat("###,###");
             for (SanPham sp : dssp) {
-            Vector vec = new Vector();
+            Vector<Object> vec = new Vector<>();
             vec.add(sp.getMaSP());
             vec.add(sp.getTenSP());
             String tenLoai = loaiBUS.getTenLoai(sp.getMaLoai());

@@ -696,7 +696,7 @@ public class FormBanHang extends JPanel {
         if (row == 0) return;
         int tongTien = 0;
         for (int i = 0; i < row; i++) {
-            Vector vec = new Vector();
+            Vector<Object> vec = new Vector<>();
             vec.add(tblGioHang.getValueAt(i, 0));
             vec.add(tblGioHang.getValueAt(i, 1));
             vec.add(tblGioHang.getValueAt(i, 2));

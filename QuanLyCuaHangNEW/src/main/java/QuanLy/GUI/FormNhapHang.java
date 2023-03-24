@@ -869,7 +869,7 @@ public class FormNhapHang extends javax.swing.JPanel {
             dtmGioNhap = (DefaultTableModel) tblGioNhap.getModel();
             //dtmGioNhap.setNumRows(0);
 
-            Vector vec = new Vector();
+            Vector<Object> vec = new Vector<>();
             vec.add(maSP);
             vec.add(tenSP);
             vec.add(soLuong);
@@ -1036,7 +1036,7 @@ public class FormNhapHang extends javax.swing.JPanel {
         dtmCTPhieuNhap.setNumRows(0);
         if (dsct != null) {
             for (CTPhieuNhap ct : dsct) {
-                Vector vec = new Vector();
+                Vector<Object> vec = new Vector<>();
                 vec.add((Object) ct.getMaSP());
                 vec.add(dcf.format((Object) ct.getSoLuong()));
                 vec.add(dcf.format((Object) ct.getDonGia()));
@@ -1128,7 +1128,7 @@ public class FormNhapHang extends javax.swing.JPanel {
             loadDataTablePhieuNhapTheoNgay(tuNgay,denNgay);
         } 
         catch (Exception e) {
-            MyDialog dlg = new MyDialog("Tìm kiếm đang bỏ trống ", MyDialog.WARNING_DIALOG);
+            new MyDialog("Tìm kiếm đang bỏ trống ", MyDialog.WARNING_DIALOG);
         }
     }
     

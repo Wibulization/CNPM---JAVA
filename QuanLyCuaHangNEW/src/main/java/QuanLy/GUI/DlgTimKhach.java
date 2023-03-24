@@ -135,7 +135,7 @@ public class DlgTimKhach extends JDialog {
         ArrayList<KhachHang> dskh = khachHangBUS.getListKhachHang();
         if (dskh != null) {
             for (KhachHang kh : dskh) {
-                Vector vec = new Vector();
+                Vector<Object> vec = new Vector<>();
                 vec.add(kh.getMaKH());
                 vec.add(kh.getHo());
                 vec.add(kh.getTen());
@@ -150,7 +150,7 @@ public class DlgTimKhach extends JDialog {
         dtmKhachHang.setRowCount(0);
         ArrayList<KhachHang> dskh = khachHangBUS.timKiemKhachHang(tuKhoa);
         for (KhachHang kh : dskh) {
-            Vector vec = new Vector();
+            Vector<Object> vec = new Vector<>();
             vec.add(kh.getMaKH());
             vec.add(kh.getHo());
             vec.add(kh.getTen());

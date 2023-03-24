@@ -179,7 +179,7 @@ public class DlgTimMaGiam extends JDialog {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         DecimalFormat dcf = new DecimalFormat(">###,###");
         for (GiamGia gg : dsg) {
-            Vector vec = new Vector();
+            Vector<Object> vec = new Vector<>();
             vec.add(gg.getMaGiam());
             vec.add(gg.getTenGiamGia());
             vec.add(gg.getPhanTramGiam());
