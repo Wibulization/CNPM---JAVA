@@ -847,11 +847,17 @@ public class FormSanPham extends javax.swing.JPanel {
 
     private void xuLyTimKiem() {
         String ten = txtTimKiem.getText().toLowerCase();
-        dtmSanPham.setRowCount(0);
-        ArrayList<SanPham> dssp = null;
-        dssp = spBUS.getSanPhamTheoTen(ten);
-        DecimalFormat dcf = new DecimalFormat("###,###");
-        for (SanPham sp : dssp) {
+        if(ten.isEmpty())
+        {
+            MyDialog dlg = new MyDialog("Thanh tìm kiếm đang trống ", MyDialog.WARNING_DIALOG);
+        }
+        else
+        {
+            dtmSanPham.setRowCount(0);
+            ArrayList<SanPham> dssp = null;
+            dssp = spBUS.getSanPhamTheoTen(ten);
+            DecimalFormat dcf = new DecimalFormat("###,###");
+            for (SanPham sp : dssp) {
             Vector vec = new Vector();
             vec.add(sp.getMaSP());
             vec.add(sp.getTenSP());
@@ -863,7 +869,8 @@ public class FormSanPham extends javax.swing.JPanel {
             vec.add(sp.getHinhAnh());
             dtmSanPham.addRow(vec);
         }
-        MyDialog dlg = new MyDialog("Số kết quả tìm được: " + dssp.size(), MyDialog.INFO_DIALOG);
+            MyDialog dlg = new MyDialog("Số kết quả tìm được: " + dssp.size(), MyDialog.INFO_DIALOG);
+        }
     }
     public void writeExcel(String excelPath) throws IOException
     {

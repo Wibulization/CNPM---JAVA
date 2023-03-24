@@ -1122,10 +1122,14 @@ public class FormNhapHang extends javax.swing.JPanel {
     }
     private void btnTimTheoNgayMouseClicked(java.awt.event.MouseEvent evt)
     {
-        String tuNgay = sdf.format(dateTuNgay.getDate());
-        String denNgay = sdf.format(dateDenNgay.getDate());
-        loadDataTablePhieuNhapTheoNgay(tuNgay,denNgay);
-        
+        try {
+            String tuNgay = sdf.format(dateTuNgay.getDate());
+            String denNgay = sdf.format(dateDenNgay.getDate());
+            loadDataTablePhieuNhapTheoNgay(tuNgay,denNgay);
+        } 
+        catch (Exception e) {
+            MyDialog dlg = new MyDialog("Tìm kiếm đang bỏ trống ", MyDialog.WARNING_DIALOG);
+        }
     }
     
     private DefaultTableModel dtmKho, dtmGioNhap, dtmPhieuNhap, dtmCTPhieuNhap;
