@@ -128,30 +128,24 @@ public class FormSanPham extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Quản lý sản phẩm");
 
         lblAnhSP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAnhSP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Mã SP:");
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Tên SP:");
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Loại SP:");
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Số lượng:");
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Đơn vị tính:");
 
         txtTen.setFont(new java.awt.Font("Roboto", 0, 15)); // NOI18N
@@ -180,7 +174,6 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diluc-Kun\\Downloads\\QuanLyCuaHangNEW\\image\\delete.png")); // NOI18N
 
         javax.swing.GroupLayout pnXoaLayout = new javax.swing.GroupLayout(pnXoa);
         pnXoa.setLayout(pnXoaLayout);
@@ -219,7 +212,6 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diluc-Kun\\Downloads\\QuanLyCuaHangNEW\\image\\add.png")); // NOI18N
 
         javax.swing.GroupLayout pnThemLayout = new javax.swing.GroupLayout(pnThem);
         pnThem.setLayout(pnThemLayout);
@@ -257,7 +249,6 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diluc-Kun\\Downloads\\QuanLyCuaHangNEW\\image\\edit.png")); // NOI18N
 
         javax.swing.GroupLayout pnSuaLayout = new javax.swing.GroupLayout(pnSua);
         pnSua.setLayout(pnSuaLayout);
@@ -281,7 +272,6 @@ public class FormSanPham extends javax.swing.JPanel {
         );
 
         jLabel17.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Đơn giá:");
 
         txtdonGia.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
@@ -302,7 +292,6 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diluc-Kun\\Downloads\\QuanLyCuaHangNEW\\image\\upload.png")); // NOI18N
 
         javax.swing.GroupLayout pnChonAnhLayout = new javax.swing.GroupLayout(pnChonAnh);
         pnChonAnh.setLayout(pnChonAnhLayout);
@@ -342,7 +331,6 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diluc-Kun\\Downloads\\QuanLyCuaHangNEW\\image\\excel.png")); // NOI18N
 
         javax.swing.GroupLayout pnXuatFileExcelLayout = new javax.swing.GroupLayout(pnXuatFileExcel);
         pnXuatFileExcel.setLayout(pnXuatFileExcelLayout);
@@ -366,7 +354,6 @@ public class FormSanPham extends javax.swing.JPanel {
         );
 
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Tìm kiếm:");
 
         txtTimKiem.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -375,7 +362,6 @@ public class FormSanPham extends javax.swing.JPanel {
         pnTim.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnTim.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnTim.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diluc-Kun\\Downloads\\QuanLyCuaHangNEW\\image\\search.png")); // NOI18N
         btnTim.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnTimMouseClicked(evt);
@@ -414,7 +400,6 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diluc-Kun\\Downloads\\QuanLyCuaHangNEW\\image\\import-excel.png")); // NOI18N
 
         javax.swing.GroupLayout btnNhapExcelLayout = new javax.swing.GroupLayout(btnNhapExcel);
         btnNhapExcel.setLayout(btnNhapExcelLayout);
@@ -476,7 +461,6 @@ public class FormSanPham extends javax.swing.JPanel {
         txtsoLuong.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
 
         btnReset.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnReset.setIcon(new javax.swing.ImageIcon(".\\image\\refresh.png")); // NOI18N
         btnReset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnReset.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -493,7 +477,7 @@ public class FormSanPham extends javax.swing.JPanel {
                 .addGroup(pnNhapFileExcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnNhapFileExcelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(906, 906, 906))
@@ -603,7 +587,7 @@ public class FormSanPham extends javax.swing.JPanel {
                             .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtTimKiem)
                             .addComponent(pnTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -653,7 +637,7 @@ public class FormSanPham extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
-    //GEN-LAST:event_btnXuatFileExcelMouseClicked
+//GEN-LAST:event_btnXuatFileExcelMouseClicked
 
     private void btnNhapFileExcelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNhapFileExcelMouseClicked
         // TODO add your handling code here:
@@ -665,7 +649,7 @@ public class FormSanPham extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
-    //GEN-LAST:event_btnNhapFileExcelMouseClicked
+//GEN-LAST:event_btnNhapFileExcelMouseClicked
 
     private void btnChonAnhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChonAnhMouseClicked
         xuLyChonAnh();
